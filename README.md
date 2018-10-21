@@ -1,27 +1,70 @@
-# ImagesHelperCollection
+# ngx-images
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.0-rc.1.
+*Ever experienced broken image like*
 
-## Development server
+![Image example](https://static.havemybooks.com/external/broken-image.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+If ever this happen that you loose your image but there will always be a backup for you. We've added an extra feature which will boost your page load time to upto 10X. As we load the image after the page load successfully so you angular app will turn much faster using this plugin.
 
-## Code scaffolding
+## Getting Started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    npm install ngx-images --save
 
-## Build
+        Then in your code `app.module.ts`
+        
+        import { NgxImagesModule } from  'ngx-images';
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+	    @NgModule({    
+		    imports: [
+		    ...otherImports,    
+		    NgxImagesModule 
+		    ]
+	    })
 
-## Running unit tests
+Then in your code `app.component.ts`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    import { NgxImagesService, ImageConfig } from 'ngx-images';
+    localConfig:  ImageConfig  = { imageFallbackPath:  'https://www.gstatic.com/webp/gallery3/1.png',
+		addLoader:  true,
+		loader:  'rotating-plane',
+		pageLoadBoost:  true
+	};
 
-## Running end-to-end tests
+    constructor(public  imgHelper:  NgxImagesService) {}    
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+    ngOnInit() {
+		    this.imgHelper.setGlobal({ imageFallbackPath:  'https://www.gstatic.com/webp/gallery3/2.png',    
+		    addLoader:  true,    
+		    loader:  'rotating-plane',    
+		    pageLoadBoost:  true    
+	    });    
+    }
+Then in your code `app.component.scss`
 
-## Further help
+    @import  '~ngx-images/loader';
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Then in your code `app.component.html`
+
+    <strong>This doesn't look good</strong>
+    <img src="i_am_not_here.jpg">
+
+    <strong>Replace below image with your logo</strong>
+    <span> <-Atleast one parent of image with single child is important
+        <img src='asfd.jpg' ngxImages>
+    </span>
+### Working Examples
+
+Here's the demo on [stackblitz](https://stackblitz.com/edit/ngx-images)
+
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository]To install a particular version do it like this `npm i ngx-images@0.0.1 --save`
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details
+
+## Acknowledgments
+
+Thanks to everyone who'll use this plugin as this is my first plugin so actively looking forward to work on it. So all the issues are welcomed and I'll look forward to actively work on them.

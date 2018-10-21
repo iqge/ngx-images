@@ -133,6 +133,41 @@
           }
         }
       }
+    },
+    "ngx-images": {
+      "root": "projects/ngx-images",
+      "sourceRoot": "projects/ngx-images/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-images/tsconfig.lib.json",
+            "project": "projects/ngx-images/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-images/src/test.ts",
+            "tsConfig": "projects/ngx-images/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-images/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-images/tsconfig.lib.json",
+              "projects/ngx-images/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "images-helper-collection"

@@ -1,0 +1,24 @@
+{
+  "name": "ngx-images",
+  "version": "0.0.2",
+  "author": "Ishan Mahajan",
+  "description": "NGX-IMAGES allows you to define fallback image if the main one fails",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/platform-browser": "^6.0.0",
+    "@angular/platform-browser-dynamic": "^6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iqge/ngx-images.git"
+  },
+  "keywords": [
+    "image, fallback , angular6 , angular, ionic 4"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iqge/ngx-images.git/issues"
+  },
+  "homepage": "https://github.com/iqge/ngx-images#readme"
+}
