@@ -49,7 +49,7 @@ Then in your code `app.component.html`
     <img src="i_am_not_here.jpg">
 
     <strong>Replace below image with your logo</strong>
-    <span> <-Atleast one parent of image with single child is important
+    <span> <- At least one parent of image with single child is important
         <img src='asfd.jpg' ngxImages>
     </span>
 ### Working Examples
